@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <my-header/>
+    <router-view></router-view>
+    <my-footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import myHeader from './components/header-footer/Header.vue'
+import myFooter from './components/header-footer/Footer.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  components:{
+    myHeader,
+    myFooter
+  },
+  //在每次載入之前，先重置token
+  created(){
+    this.$store.dispatch('admin/refreshToken');
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  @import './assets/style.css';
+
 </style>
