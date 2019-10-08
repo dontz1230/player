@@ -14,6 +14,7 @@
              :style="newStyle"
              @click="action"
              >
+             <slot/>
 
         </div>
     </div>

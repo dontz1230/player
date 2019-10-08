@@ -10,6 +10,8 @@ import Dashboard from './components/Dashboard/Dashboard.vue'
 import MainDashboard from './components/Dashboard/Dashmain.vue';
 import Addposts from './components/Dashboard/AddPosts.vue'
 import Postslist from './components/Dashboard/ListPosts.vue'
+import Postview from './components/Post/Post.vue'
+import PageNotFound from './components/404/404.vue'
 
 import store from './components/Store/store.js'
 
@@ -49,6 +51,14 @@ export default new VueRouter({
           next('/')
         }
       }
+    },
+    { 
+      path:'/post/:id',
+      component: Postview 
+    },
+    {
+      path:'*',
+      component: PageNotFound
     }
 
   ]

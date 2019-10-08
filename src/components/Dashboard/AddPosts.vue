@@ -26,11 +26,11 @@
                 </p>
             </div>
 
-            <!-- 內文 -->
+            <!-- 簡述 -->
             <div class="input_field"
                  :class="{ invalid : $v.formdata.desc.$error }">
                 <label>簡述</label>
-                <input type="text" placeholder="簡述請小於20字"
+                <input type="text" placeholder="簡述請小於40字"
                        v-model="formdata.desc"
                        @blur="$v.formdata.desc.$touch()">
                 <p class="error_label" v-if="$v.formdata.desc.$error">
@@ -106,7 +106,7 @@ export default {
             },
             desc:{
                 required,
-                maxLength:maxLength(20)
+                maxLength:maxLength(40)
             },
             rating:{
                 required
@@ -128,8 +128,8 @@ export default {
             return imgUrl
         }
     },
-    destroyed:{
-
+    destroyed(){
+        this.$store.commit('admin/clearImgUpload')
     },
     methods:{
         postSubmit(){

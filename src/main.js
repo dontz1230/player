@@ -8,18 +8,20 @@ import Button from './components/UI/Button.vue'
 Vue.component('app-btn', Button);
 
 //使用Vue matertial
-import { MdCard, MdButton, MdContent, MdDialog } from 'vue-material/dist/components'
+import { MdCard, MdButton, MdContent, MdDialog, MdTable, MdDialogConfirm } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 Vue.use(MdCard)
 Vue.use(MdButton)
 Vue.use(MdContent)
 Vue.use(MdDialog)
+Vue.use(MdTable)
+Vue.use(MdDialogConfirm)
 
 //使用Vue Resourse
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
-Vue.http.options.root = 'https://player-f14a1.firebaseio.com/'
+Vue.http.options.root = 'https://player-f14a1.firebaseio.com'
 
 //使用Vuelidate
 import vuelidate from 'vuelidate'
